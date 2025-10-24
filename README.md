@@ -7,8 +7,6 @@ CSS3 + Bootstrap 5 for layout and responsive design
 Vanilla JavaScript (ES modules) for the interactive behavior
 LocalStorage to save and load capsules and user progress
 
-
-
 pocket-classroom/
 │── index.html
 │
@@ -28,10 +26,9 @@ pocket-classroom/
 │
 └── README.md
 
-
 🔗 Extras
 Live Preview — https://sana16coder.github.io/pocket-classroom/
-Sample Capsule — Try import/export using the provided JSON example
+Sample Capsule — https://github.com/Sana16Coder/pocket-classroom/blob/main/sample-capsule.json
 
 
 
