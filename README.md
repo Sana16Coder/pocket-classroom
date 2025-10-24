@@ -30,7 +30,7 @@ pocket-classroom/
 
 
 🔗 Extras
-Live Preview — Open the running project in your browser
+Live Preview — https://sana16coder.github.io/pocket-classroom/
 Sample Capsule — Try import/export using the provided JSON example
 
 
