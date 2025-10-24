@@ -1,119 +1,127 @@
-/* =======================
-   GLOBAL STYLES
-   ======================= */
+/* GLOBAL STYLES */
 
-/* Body — dark gray gradient background */
+/* Background and text */
 body {
-  background: linear-gradient(181deg, #1f2937 0%, #111827 100%);
-  color: #e5e7eb;
-  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+  background: linear-gradient(180deg, #0b0d16 0%, #131a2c 100%);
+  color: #f0f4ff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
+
+/* Universal text color */
 body, p, h1, h2, h3, h4, h5, h6 {
-  color: #e5e7eb !important;
+  color: #f0f4ff !important;
 }
 
-/* =======================
-   NAVBAR STYLES
-   ======================= */
+/* Links */
+a {
+  text-decoration: none;
+  color: #7bdcb5;
+}
+a:hover {
+  color: #4de2b1;
+}
 
-/* Navbar — deep navy gradient */
+/* NAVBAR */
 .navbar.bg-gradient {
-  background: linear-gradient(91deg, #0f172a, #1e3a8a);
+  background: linear-gradient(90deg, #7f00ff, #3f51b5);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Remove default border */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
 .navbar-toggler {
   border: none;
 }
-
-/* Custom hamburger icon (visible on dark backgrounds) */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23e5e7eb' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(229,231,235,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-/* Navbar links — cyan highlight */
 .nav-link {
-  color: #22d3ee !important;
-  transition: color .2s ease;
+  color: #e3e8ff !important;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 .nav-link:hover {
-  color: #67e8f9 !important;
+  color: #9cf6ff !important;
+  transform: translateY(-2px);
+}
+.nav-link.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid #9cf6ff;
 }
 
-/* =======================
-   CARD STYLES
-   ======================= */
-
-/* Card — dark gray with border + hover lift */
+/* CARDS */
 .card {
-  background: #111827;
-  border: 1px solid #374151;
-  border-radius: 11.5px;
-  transition: transform .2s ease;
-  color: #e5e7eb;
+  background-color: #1b2133;
+  border: 1px solid #2c3350;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+  color: #f0f4ff;
+  box-shadow: 0 0 15px rgba(50, 80, 255, 0.1);
 }
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(120, 90, 255, 0.25);
 }
 
-/* =======================
-   FORM ELEMENTS
-   ======================= */
-
-/* Form fields — dark mode friendly */
+/* FORMS */
 .form-control,
 .form-select {
-  background: #1f2937;
-  color: #e5e7eb;
-  border: 1px solid #374151;
-  white-space: pre-wrap;
-  line-height: 1.5;
+  background-color: #252c42;
+  color: #ffffff;
+  border: 1px solid #343a50;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.form-control:focus,
+.form-select:focus {
+  background-color: #2c3450;
+  border-color: #7f00ff;
+  box-shadow: 0 0 6px rgba(127, 0, 255, 0.5);
 }
 .form-control::placeholder {
-  color: #9ca3af;
+  color: #b8bcd1;
 }
 
-/* =======================
-   BUTTONS
-   ======================= */
-
-/* Buttons — cyan border + hover glow */
-.btn, .nav-link {
-  color: #22d3ee !important;
-}
-.btn:focus,
-.btn:active,
-.btn:hover {
-  background: inherit !important;
-  border-color: #22d3ee;
-}
-.btn-outline-light,
-.btn-outline-light:hover,
-.btn-outline-light:active,
-.btn-outline-light:focus {
-  color: #22d3ee !important;
-  background: transparent !important;
-  border-color: #22d3ee !important;
+/* BUTTONS */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
-/* =======================
-   FLIP CARD STYLES
-   ======================= */
+.btn-outline-light {
+  color: #e8e8e8 !important;
+  border-color: #b3b3ff !important;
+  background-color: transparent !important;
+}
+.btn-outline-light:hover {
+  background: linear-gradient(90deg, #7f00ff, #3f51b5);
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
 
+/* FLASHCARDS */
 .flip-card {
-  background: transparent;
+  background-color: transparent;
   width: 100%;
-  max-width: 280px;
-  aspect-ratio: 7/4;
+  max-width: 300px;
+  aspect-ratio: 7 / 4;
   perspective: 1000px;
-  margin: auto;
+  margin: 1.5rem auto;
 }
+
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform .6s;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
   cursor: pointer;
 }
@@ -123,6 +131,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 .flip-card-inner.flipped {
   transform: rotateY(180deg);
 }
+
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -132,56 +141,64 @@ body, p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  padding: 16px;
+  border-radius: 12px;
+  padding: 18px;
   font-weight: 600;
   font-size: 1.05rem;
   color: #ffffff;
   text-align: center;
+  word-wrap: break-word;
 }
-.flip-card-front { background: #2563eb; }
-.flip-card-back { background: #f97316; transform: rotateY(180deg); }
 
-/* =======================
-   QUIZ TAB STYLES
-   ======================= */
+.flip-card-front {
+  background: linear-gradient(145deg, #6a00ff, #3f51b5);
+}
+.flip-card-back {
+  background: linear-gradient(145deg, #00bcd4, #007bff);
+  transform: rotateY(180deg);
+}
 
+/*  QUIZ STYLES */
 #quizTab .quizOpt {
-  transition: background-color .3s, transform .2s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 #quizTab .quizOpt:not(.btn-success):not(.btn-danger):hover {
-  background: #16a34a !important;
+  background-color: #00bcd4 !important;
   color: #ffffff !important;
   transform: translateY(-3px);
 }
 
-/* =======================
-   RESPONSIVE DESIGN
-   ======================= */
-
-/* Medium screens */
+/* RESPONSIVE DESIGN */
 @media (max-width: 992px) {
   .card { margin-bottom: 1rem; }
 }
-
-/* Tablets */
 @media (max-width: 768px) {
-  .flip-card { max-width: 220px; }
-  .flip-card-front, .flip-card-back { font-size: .9rem; padding: 10px; }
-}
-
-/* Mobile phones */
-@media (max-width: 576px) {
-  body { font-size: 13px; }
-  .navbar-brand { font-size: .9rem; }
-  .flip-card { max-width: 180px; }
-  .flip-card-front, .flip-card-back { font-size: .8rem; padding: 8px; }
-}
-
-/* Smallest phones */
-@media (max-width: 480px) {
-  .flip-card {
-    max-width: 150px;
-    aspect-ratio: 6/4;
+  .flip-card { max-width: 240px; }
+  .flip-card-front, .flip-card-back {
+    font-size: 0.9rem;
+    padding: 12px;
   }
 }
+@media (max-width: 576px) {
+  body { font-size: 13px; }
+  .navbar-brand { font-size: 0.9rem; }
+  .flip-card { max-width: 200px; }
+  .flip-card-front, .flip-card-back {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+/* TAB NAVIGATION */
+.nav-tabs .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-bottom: 2px solid transparent;
+}
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid #7f00ff;
+   }
