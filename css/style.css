@@ -104,3 +104,21 @@ html, body {
   overflow-x: hidden;
 }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23e5e7eb' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(229,231,235,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width:480px){
+  .flip-card {
+    max-width: 150px;
+    aspect-ratio: 6/4;
+  }
+}
+
+  .container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  }
+
+
