@@ -1,6 +1,6 @@
 /* GLOBAL STYLES */
 body {
-  background: linear-gradient(180deg, #0b0d16 0%, #131a2c 100%);
+  background-color: #0d1117; 
   color: #f0f4ff;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -134,3 +134,4 @@ body, p, h1, h2, h3, h4, h5, h6 {
   body { font-size: 13px; }
   .navbar-brand { font-size: 0.9rem; }
 }
+
