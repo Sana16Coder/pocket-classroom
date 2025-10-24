@@ -1,0 +1,101 @@
+/* Body — dark gray background */
+body {
+  background: linear-gradient(181deg,#1f2937 0%,#111827 100%);
+  color:#e5e7eb;
+}
+body,p,h1,h2,h3,h4,h5,h6 { color:#e5e7eb !important; }
+
+/* Navbar — deep navy gradient */
+.navbar.bg-gradient{
+  background:linear-gradient(91deg,#0f172a,#1e3a8a);
+}
+.navbar-toggler{ border:none; }
+
+/* Card — dark gray with subtle border */
+.card{
+  background:#111827;
+  border:1px solid #374151;
+  border-radius:11.5px;
+  transition:transform .2s ease;
+  color:#e5e7eb;
+  gap:0;
+}
+.card:hover{ transform:translateY(-5px); }
+
+/* Form fields — dark gray background */
+.form-control,
+.form-select{
+  background:#1f2937;
+  color:#e5e7eb;
+  border:1px solid #374151;
+  white-space:pre-wrap;
+  line-height:1.5;
+}
+.form-control::placeholder{ color:#9ca3af; }
+
+/* Links + buttons — muted cyan */
+.btn,.nav-link{ color:#22d3ee !important; }
+
+/* Flashcards — front steel blue / back muted orange */
+.flip-card{ background:transparent; width:100%; max-width:280px; aspect-ratio:7/4; perspective:1000px; margin:auto; }
+.flip-card-inner{ position:relative; width:100%; height:100%; text-align:center; transition:transform .6s; transform-style:preserve-3d; cursor:pointer; }
+.flip-card:hover .flip-card-inner{ transform:rotateY(180deg); }
+.flip-card-inner.flipped{ transform:rotateY(180deg); }
+
+.flip-card-front,
+.flip-card-back{
+  position:absolute; width:100%; height:100%;
+  backface-visibility:hidden;
+  display:flex; justify-content:center; align-items:center;
+  border-radius:10px; padding:16px;
+  font-weight:600; font-size:1.05rem;
+  color:#ffffff; word-wrap:break-word; text-align:center;
+}
+.flip-card-front{ background:#2563eb; }
+.flip-card-back{ background:#f97316; transform:rotateY(180deg); }
+
+/* Responsive adjustments */
+@media (max-width:768px){ .flip-card{ max-width:220px;} .flip-card-front,.flip-card-back{ font-size:.9rem; padding:10px;} }
+@media (max-width:992px){ .card{ margin-bottom:1rem;} }
+@media (max-width:576px){
+  body{ font-size:13px;}
+  .navbar-brand{ font-size:.9rem;}
+  .flip-card{ max-width:180px;}
+  .flip-card-front,.flip-card-back{ font-size:.8rem;padding:8px;}
+}
+
+/* Tabs — cyan text */
+.nav-tabs .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover{
+  color:#22d3ee !important;
+  background:transparent !important;
+  border-color:transparent !important;
+}
+
+/* Button states — hover cyan */
+.btn:focus,
+.btn:active,
+.btn:hover{
+  background:inherit !important;
+  border-color:#22d3ee;
+}
+.btn-outline-light,
+.btn-outline-light:hover,
+.btn-outline-light:active,
+.btn-outline-light:focus{
+  color:#22d3ee !important;
+  background:transparent !important;
+  border-color:#22d3ee !important;
+}
+
+/* Quiz option hover — muted green */
+#quizTab .quizOpt{
+  transition:background-color .3s,transform .2s;
+}
+#quizTab .quizOpt:not(.btn-success):not(.btn-danger):hover{
+  background:#16a34a !important;
+  color:#ffffff !important;
+  transform:translateY(-3px);
+}

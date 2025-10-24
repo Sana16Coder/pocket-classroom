@@ -1,0 +1,41 @@
+{
+  "schema": "pocket-classroom/v1",
+
+  "id": "sample001",
+  "title": "Sample Capsule",
+  "subject": "Math",
+  "level": "Beginner",
+
+  "description": "Demo capsule for testing Notes, Flashcards, and Quiz screens.",
+
+  "notes": [
+    "Example note #1.",
+    "Feel free to add more notes."
+  ],
+
+  "flashcards": [
+    {
+      "front": "10 + 10 = ?",
+      "back": "20"
+    },
+    {
+      "front": "What is the largest ocean in the world?",
+      "back": "Pacific Ocean"
+    }
+  ],
+
+  "quiz": [
+    {
+      "question": "What planet is called the red planet?",
+      "choices": ["Earth", "Sun", "Moon", "Mars"],
+      "answer": 4
+    },
+    {
+      "question": "How many Colors are in a rainbow?",
+      "choices": ["6", "8", "5", "7"],
+      "answer": 4
+    }
+  ],
+
+  "updatedAt": "2025-20-09T08:08:00.000Z"
+}
