@@ -99,3 +99,8 @@ body,p,h1,h2,h3,h4,h5,h6 { color:#e5e7eb !important; }
   color:#ffffff !important;
   transform:translateY(-3px);
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
