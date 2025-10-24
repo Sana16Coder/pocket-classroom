@@ -1,25 +1,13 @@
 /* GLOBAL STYLES */
-
-/* Background and text */
 body {
   background: linear-gradient(180deg, #0b0d16 0%, #131a2c 100%);
   color: #f0f4ff;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
-
-/* Universal text color */
 body, p, h1, h2, h3, h4, h5, h6 {
   color: #f0f4ff !important;
-}
-
-/* Links */
-a {
-  text-decoration: none;
-  color: #7bdcb5;
-}
-a:hover {
-  color: #4de2b1;
 }
 
 /* NAVBAR */
@@ -27,35 +15,12 @@ a:hover {
   background: linear-gradient(90deg, #7f00ff, #3f51b5);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
+.navbar-toggler { border: none; }
+.nav-link { color: #e3e8ff !important; font-weight: 500; transition: 0.3s; }
+.nav-link:hover { color: #9cf6ff !important; transform: translateY(-2px); }
+.nav-link.active { color: #fff !important; border-bottom: 2px solid #9cf6ff; }
 
-.navbar-brand {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.navbar-toggler {
-  border: none;
-}
-.navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.nav-link {
-  color: #e3e8ff !important;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-.nav-link:hover {
-  color: #9cf6ff !important;
-  transform: translateY(-2px);
-}
-.nav-link.active {
-  color: #ffffff !important;
-  border-bottom: 2px solid #9cf6ff;
-}
-
-/* CARDS */
+/* CARD DESIGN */
 .card {
   background-color: #1b2133;
   border: 1px solid #2c3350;
@@ -63,54 +28,18 @@ a:hover {
   transition: all 0.25s ease;
   color: #f0f4ff;
   box-shadow: 0 0 15px rgba(50, 80, 255, 0.1);
+  width: 100%;
+  padding: 1rem;
 }
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(120, 90, 255, 0.25);
 }
 
-/* FORMS */
-.form-control,
-.form-select {
-  background-color: #252c42;
-  color: #ffffff;
-  border: 1px solid #343a50;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-.form-control:focus,
-.form-select:focus {
-  background-color: #2c3450;
-  border-color: #7f00ff;
-  box-shadow: 0 0 6px rgba(127, 0, 255, 0.5);
-}
-.form-control::placeholder {
-  color: #b8bcd1;
-}
-
-/* BUTTONS */
-.btn {
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.25s ease;
-}
-
-.btn-outline-light {
-  color: #e8e8e8 !important;
-  border-color: #b3b3ff !important;
-  background-color: transparent !important;
-}
-.btn-outline-light:hover {
-  background: linear-gradient(90deg, #7f00ff, #3f51b5);
-  border-color: transparent !important;
-  color: #ffffff !important;
-}
-
-/* FLASHCARDS */
+/* RESPONSIVE FLASHCARD */
 .flip-card {
   background-color: transparent;
-  width: 100%;
-  max-width: 300px;
+  width: clamp(180px, 80%, 320px); /* Fully fluid */
   aspect-ratio: 7 / 4;
   perspective: 1000px;
   margin: 1.5rem auto;
@@ -125,12 +54,8 @@ a:hover {
   transform-style: preserve-3d;
   cursor: pointer;
 }
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-inner.flipped {
-  transform: rotateY(180deg);
-}
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-inner.flipped { transform: rotateY(180deg); }
 
 .flip-card-front,
 .flip-card-back {
@@ -142,9 +67,9 @@ a:hover {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  padding: 18px;
+  padding: clamp(10px, 3vw, 18px);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
   color: #ffffff;
   text-align: center;
   word-wrap: break-word;
@@ -158,7 +83,38 @@ a:hover {
   transform: rotateY(180deg);
 }
 
-/*  QUIZ STYLES */
+/* FORM + BUTTONS */
+.form-control, .form-select {
+  background-color: #252c42;
+  color: #ffffff;
+  border: 1px solid #343a50;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.form-control:focus, .form-select:focus {
+  background-color: #2c3450;
+  border-color: #7f00ff;
+  box-shadow: 0 0 6px rgba(127, 0, 255, 0.5);
+}
+.form-control::placeholder { color: #b8bcd1; }
+
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+.btn-outline-light {
+  color: #e8e8e8 !important;
+  border-color: #b3b3ff !important;
+  background-color: transparent !important;
+}
+.btn-outline-light:hover {
+  background: linear-gradient(90deg, #7f00ff, #3f51b5);
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* QUIZ BUTTONS */
 #quizTab .quizOpt {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -168,37 +124,13 @@ a:hover {
   transform: translateY(-3px);
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .card { margin-bottom: 1rem; }
-}
+/* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
-  .flip-card { max-width: 240px; }
-  .flip-card-front, .flip-card-back {
-    font-size: 0.9rem;
-    padding: 12px;
+  .card {
+    padding: 0.8rem;
   }
 }
 @media (max-width: 576px) {
   body { font-size: 13px; }
   .navbar-brand { font-size: 0.9rem; }
-  .flip-card { max-width: 200px; }
-  .flip-card-front, .flip-card-back {
-    font-size: 0.8rem;
-    padding: 8px;
-  }
 }
-
-/* TAB NAVIGATION */
-.nav-tabs .nav-link,
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {
-  color: #ffffff !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  border-bottom: 2px solid transparent;
-}
-.nav-tabs .nav-link.active {
-  border-bottom: 2px solid #7f00ff;
-   }
